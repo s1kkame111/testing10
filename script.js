@@ -370,3 +370,16 @@ startBtn.addEventListener("click", () => {
     startApp();
   }, 800);
 });
+
+document.addEventListener("click", (e) => {
+  const card = e.target.closest(".card");
+
+  // only allow clicking SMALL cards (not full screen one)
+  if (!card) return;
+
+  const id = card.id.replace("card", "");
+  if (parseInt(id) !== order[0]) {
+    clicks++;
+    step();
+  }
+});
