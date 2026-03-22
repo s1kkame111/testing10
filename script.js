@@ -156,11 +156,9 @@ function init() {
     x: width + 400,
     delay: 0.5,
     ease,
-    onComplete: () => {
-      setTimeout(() => {
-        loop();
-      }, 500);
-    },
+onComplete: () => {
+  // loop removed — no auto switching
+},
   });
   rest.forEach((i, index) => {
     gsap.to(getCard(i), {
